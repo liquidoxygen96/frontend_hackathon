@@ -9,12 +9,13 @@
   <body>
     Hello
 
-    <button onClick="connect()">Connect</button>
+    <button id="connectButton" onClick="connect()">Connect</button>
 
     <script>
       async function connect() {
         if (typeof window.ethereum !== "undefined") {
           await window.ethereum.request({ method: "eth_requestAccounts" });
+          document.getElementById("connectButton").innerHTML = "connected";
         }
       }
     </script>
